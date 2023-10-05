@@ -3,6 +3,12 @@ import React , {Component} from "react"
 
 
 class MyComponent extends Component {
+
+    state = {
+        name : 'Hồng',
+        ho : 'Nghiêm Đình'
+    }
+
     handleOnChangeName = (event) => {
         this.setState({
             name: event.target.value
@@ -11,16 +17,14 @@ class MyComponent extends Component {
     
 
     render() {
-        this.setState = {
-            name : 'Hồng',
-            ho : 'Nghiêm Đình'
-        }
+        
 
         
         return (
             <>
-                
-                <h1>My name is : {this.setState.ho} {this.setState.name}</h1>
+                <input value={this.state.name} type="text" onChange={(event) => this.handleOnChangeName(event)}/>
+                <br></br>
+                <h1>My name is : {this.state.name}</h1>
             </>
             
         )
