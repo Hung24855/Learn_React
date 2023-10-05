@@ -4,6 +4,8 @@ import MyComponent from './ExampleComponent/myComponent.js';
 
 // Co 2 loai component : function component va class component
 //JSX
+
+// Muốn render ra 2 div trong 1 component thì ra thêm thẻ <React.Fragment></React.Fragment>
 function App() {
   return (
     <div className="App">
