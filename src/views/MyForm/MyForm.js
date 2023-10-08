@@ -2,8 +2,9 @@ import React from "react";
 import ChildComponent from "./ChildComponent";
 class MyForm extends React.Component {
   state = {
-    firstName: "",
+    firstName: "Hong",
     lastName: "",
+    age: "21",
     arrJobs: [
       { id: "Job1", title: "Front-End", salary: "500$" },
       { id: "Job2", title: "Back-End", salary: "400$" },
@@ -65,7 +66,7 @@ class MyForm extends React.Component {
 
         <ChildComponent
           name={this.state.firstName}
-          tuoi={21}
+          tuoi={this.state.age}
           arrJobs={this.state.arrJobs}
         />
       </>
