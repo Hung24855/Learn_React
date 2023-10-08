@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.scss';
-import MyComponent from './ExampleComponent/myComponent.js';
+//import MyComponent from './ExampleComponent/myComponent.js';\
+
+import MyForm from './MyForm/MyForm';
+
 
 // Co 2 loai component : function component va class component
 //JSX
@@ -12,7 +15,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         
-        <MyComponent></MyComponent>
+      <MyForm></MyForm>
       </header>
       
     </div>
