@@ -10,40 +10,57 @@ import React from "react";
 class ShowJobsComponent extends React.Component {
   state = {
     showJobs: false,
-
   };
 
-
   handleShowHide = () => {
-    this.setState(
-      {
-        showJobs: !this.state.showJobs
-      }
-    )
-  }
+    this.setState({
+      showJobs: !this.state.showJobs,
+    });
+  };
+
+  HandleRemoveJob = (item, index) => {
+    this.props.deleteJob(item, index);
+  };
   render() {
     let { arrJobs } = this.props;
     let { showJobs } = this.state;
 
     return (
       <>
-
-
         {showJobs === false ? (
           <div>
-            <button onClick={() => { this.handleShowHide() }}>Show</button>
+            <button
+              onClick={() => {
+                this.handleShowHide();
+              }}
+            >
+              Show
+            </button>
           </div>
         ) : (
           <>
             {arrJobs.map((item, index) => {
               return (
                 <div key={item.id}>
-                  Công việc : {item.title} - Lương : {item.salary}{" "}
+                  Công việc : {item.title} - Lương : {item.salary} - {index}
+                  <button
+                    onClick={() => {
+                      this.HandleRemoveJob(item, index);
+                    }}
+                  >
+                    X
+                  </button>
                 </div>
               );
             })}
             <div>
-              <button onClick={() => { this.handleShowHide() }}>Hide</button>
+              <button
+                onClick={() => {
+                  this.handleShowHide();
+                }}
+              >
+                Hide
+              </button>
             </div>
           </>
         )}
