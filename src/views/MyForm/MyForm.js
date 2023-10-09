@@ -1,33 +1,42 @@
 import React from "react";
-import ChildComponent from "./ChildComponent";
+
 class MyForm extends React.Component {
   state = {
-    firstName: "Hong",
-    lastName: "",
-    age: "21",
-    arrJobs: [
-      { id: "Job1", title: "Front-End", salary: "500$" },
-      { id: "Job2", title: "Back-End", salary: "400$" },
-      { id: "Job3", title: "Mobile", salary: "300$" },
-    ],
+    title: "",
+    Salary: ""
   };
 
-  handleOnChangeFirstname = (event) => {
+  handleOnChangetitle = (event) => {
     this.setState({
-      firstName: event.target.value,
+      title: event.target.value,
     });
   };
 
-  handleOnChangeLastName = (event) => {
+  handleOnChangeSalary = (event) => {
+
     this.setState({
-      lastName: event.target.value,
+      Salary: event.target.value,
     });
   };
 
   handleClick = (event) => {
     //Ngặn chặn sự kiện mặc định của thẻ HTML
     event.preventDefault();
-    console.log(this.state);
+    // this.setState(
+    //   {
+    //     arrJobs: [...this.state.arrJobs,
+    //     {
+    //       id: Math.random() * 100, title: this.state.title, Salary: this.state.Salary
+    //     }
+    //     ]
+    //   }
+    // )
+    this.props.AddJobs({
+      id: Math.random(),
+      title: this.state.title,
+      salary: this.state.Salary
+    });
+    console.log("Data : ", this.state)
   };
 
   //Khi thêm thuộc tính value vào ô input thì sẽ không thể nào nhập được
@@ -35,25 +44,25 @@ class MyForm extends React.Component {
   render() {
     return (
       <>
-        <h2>HTML Forms</h2>
+        <h2>---- Add Job ----</h2>
 
         <form>
-          <label htmlFor="firstName">First name:</label>
+          <label htmlFor="title">title:</label>
           <br />
           <input
-            id="firstName"
+            id="title"
             type="text"
-            value={this.state.firstName}
-            onChange={(event) => this.handleOnChangeFirstname(event)}
+            value={this.state.title}
+            onChange={(event) => this.handleOnChangetitle(event)}
           />
           <br />
-          <label htmlFor="lastName">Last name:</label>
+          <label htmlFor="Salary">Salary:</label>
           <br />
           <input
-            id="lastName"
+            id="Salary"
             type="text"
-            value={this.state.lastName}
-            onChange={(event) => this.handleOnChangeLastName(event)}
+            value={this.state.Salary}
+            onChange={(event) => this.handleOnChangeSalary(event)}
           />
           <br />
           <br />
@@ -64,11 +73,7 @@ class MyForm extends React.Component {
           />
         </form>
 
-        <ChildComponent
-          name={this.state.firstName}
-          tuoi={this.state.age}
-          arrJobs={this.state.arrJobs}
-        />
+
       </>
     );
   }

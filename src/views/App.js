@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.scss';
 //import MyComponent from './ExampleComponent/myComponent.js';\
 
-import MyForm from './MyForm/MyForm';
+import ParentComponent from './MyForm/ParentComponent';
 
 
 // Co 2 loai component : function component va class component
@@ -14,10 +14,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        
-      <MyForm></MyForm>
+
+        <ParentComponent />
       </header>
-      
+
     </div>
   );
 }

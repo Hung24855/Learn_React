@@ -7,9 +7,10 @@ import React from "react";
 // Hàm map nhận đối số là một arow function
 // Trong JSX dùng hàm map() thì JSX sẽ trả ra một Array mới
 
-class ChildComponent extends React.Component {
+class ShowJobsComponent extends React.Component {
   state = {
     showJobs: false,
+
   };
 
 
@@ -21,14 +22,12 @@ class ChildComponent extends React.Component {
     )
   }
   render() {
-    let { name, tuoi, arrJobs } = this.props;
+    let { arrJobs } = this.props;
     let { showJobs } = this.state;
 
     return (
       <>
-        <div>Ten cua ban la : {name}</div>
 
-        <div>Tuoi cua ban la : {tuoi}</div>
 
         {showJobs === false ? (
           <div>
@@ -58,7 +57,7 @@ class ChildComponent extends React.Component {
  *Function Component : Sử dụng khi tại component đó không sử dụng đến state ( Nhận data từ thằng cha truyền cho thằng con )
  *
  */
-// const ChildComponent = (props) => {
+// const ShowJobsComponent = (props) => {
 //   let { name, tuoi, arrJobs } = props;
 
 //   return (
@@ -77,4 +76,4 @@ class ChildComponent extends React.Component {
 //   );
 // };
 
-export default ChildComponent;
+export default ShowJobsComponent;
