@@ -1,4 +1,5 @@
 import React from "react";
+import "./styleBtn.scss";
 /**
  *Class component
  */
@@ -30,6 +31,7 @@ class ShowJobsComponent extends React.Component {
         {showJobs === false ? (
           <div>
             <button
+              className="btn btn-show"
               onClick={() => {
                 this.handleShowHide();
               }}
@@ -55,6 +57,7 @@ class ShowJobsComponent extends React.Component {
             })}
             <div>
               <button
+                className="btn btn-hide"
                 onClick={() => {
                   this.handleShowHide();
                 }}

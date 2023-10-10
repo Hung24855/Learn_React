@@ -1,0 +1,10 @@
+$btnColor : white;
+$bgBtnColor : gray;
+$widBtn : 60px;
+
+.btn
+{
+    color: $btnColor;
+    background-color: $bgBtnColor;
+    width: $widBtn;
+}

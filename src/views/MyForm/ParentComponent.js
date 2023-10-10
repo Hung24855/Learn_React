@@ -1,6 +1,7 @@
 import React from "react";
 import MyForm from "./MyForm";
 import ShowJobsComponent from "./ShowJobsComponent";
+
 class ParentComponent extends React.Component {
   state = {
     arrJobs: [
