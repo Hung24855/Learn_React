@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "./Nav/Nav";
 
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import ParentComponent from "./MyForm/ParentComponent";
 
@@ -21,14 +21,14 @@ function App() {
         <Nav />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <switch>
+          <Switch>
             <Route path="/" exact>
               <ParentComponent />
             </Route>
             <Route path="/todo">
               <ListTodoApp />
             </Route>
-          </switch>
+          </Switch>
         </header>
 
         <ToastContainer

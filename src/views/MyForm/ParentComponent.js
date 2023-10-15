@@ -1,6 +1,8 @@
 import React from "react";
 import MyForm from "./MyForm";
 import ShowJobsComponent from "./ShowJobsComponent";
+import { withRouter } from "react-router";
+import Color from "../HOC/Color";
 
 class ParentComponent extends React.Component {
   state = {
@@ -25,6 +27,12 @@ class ParentComponent extends React.Component {
       arrJobs: jobs.filter((item) => item.id !== job.id),
     });
   };
+
+  componentDidMount() {
+    // setTimeout(() => {
+    //   this.props.history.push("/todo");
+    // }, 3000);
+  }
   render() {
     return (
       <>
@@ -38,4 +46,5 @@ class ParentComponent extends React.Component {
   }
 }
 
-export default ParentComponent;
+// export default withRouter(ParentComponent);
+export default Color(ParentComponent);
