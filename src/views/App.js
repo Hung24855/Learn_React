@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.scss';
-//import MyComponent from './ExampleComponent/myComponent.js';\
+import logo from "./logo.svg";
+import "./App.scss";
+import ListTodoApp from "./todoApp/ListTodo";
+//import MyComponent from './ExampleComponent/myComponent.js';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Nav from "./Nav/Nav";
 
-import ParentComponent from './MyForm/ParentComponent';
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
+import ParentComponent from "./MyForm/ParentComponent";
 
 // Co 2 loai component : function component va class component
 //JSX
-
+// npm i react-toastify
 // Muốn render ra 2 div trong 1 component thì ra thêm thẻ <React.Fragment></React.Fragment>
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <BrowserRouter>
+      <div className="App">
+        <Nav />
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <switch>
+            <Route path="/" exact>
+              <ParentComponent />
+            </Route>
+            <Route path="/todo">
+              <ListTodoApp />
+            </Route>
+          </switch>
+        </header>
 
-        <ParentComponent />
-      </header>
-
-    </div>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        {/* Same as */}
+      </div>
+    </BrowserRouter>
   );
 }
 

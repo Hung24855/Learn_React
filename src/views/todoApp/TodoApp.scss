@@ -1,0 +1,46 @@
+input{
+    outline: none;
+    min-width: 250px;
+    margin-right: 20px;
+}
+
+table
+{
+    width: 100%;
+    min-width: 700px;
+    float: left;
+    margin-top: 40px;
+    border-collapse: collapse;
+    border: solid 1px gray;
+    text-align: center;
+
+    th{
+        font-weight: bold; color: greenyellow;
+        border: solid 1px;
+    }
+
+    td{
+        padding: 10px;
+        border: solid 1px;
+    }
+
+    .STT
+    {
+        width: 15%;
+    }
+
+    .JOB
+    {
+        width: 60%;
+    }
+
+    .Action
+    {
+        width: 25%;
+    }
+}
+button
+{
+    margin-right: 5px;
+}
+
