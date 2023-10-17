@@ -1,0 +1,8 @@
+Cách cài đặt : npm install --save-exact@0.21.4
+
+import vào nơi muốn sử dụng
+Sử dụng method axios.get("Link API")
+sau đó .then 
+
+=> Sử dụng promise
+Khởi tạo một state để lưu thông tin data lấy được để hiển thị lên giao diện

@@ -1,0 +1,14 @@
+.List-use-container
+{
+    .List-user-content
+    {
+        margin: 0 auto;
+        width: 400px;
+        .Child
+        {
+            height: 50px;
+            border: 1px solid grey;
+            line-height: 50px;
+        }
+    }
+}

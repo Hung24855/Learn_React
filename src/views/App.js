@@ -9,6 +9,7 @@ import Nav from "./Nav/Nav";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import ParentComponent from "./MyForm/ParentComponent";
+import ListUser from "./USER/ListUser";
 
 // Co 2 loai component : function component va class component
 //JSX
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/todo">
               <ListTodoApp />
+            </Route>
+            <Route path="/user">
+              <ListUser />
             </Route>
           </Switch>
         </header>
