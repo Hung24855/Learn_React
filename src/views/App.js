@@ -10,6 +10,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import ParentComponent from "./MyForm/ParentComponent";
 import ListUser from "./USER/ListUser";
+import DetailUser from "./USER/DetailUser";
+import avatar from "../assets/images/Avatar.jpg";
 
 // Co 2 loai component : function component va class component
 //JSX
@@ -22,15 +24,26 @@ function App() {
         <Nav />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <br></br>
+          <img
+            src={avatar}
+            className=""
+            alt="logo"
+            style={{ width: 100 + "px" }}
+          />
+          <br></br>
           <Switch>
             <Route path="/" exact>
               <ParentComponent />
             </Route>
-            <Route path="/todo">
+            <Route path="/todo" exact>
               <ListTodoApp />
             </Route>
-            <Route path="/user">
+            <Route path="/user" exact>
               <ListUser />
+            </Route>
+            <Route path="/user/:id" exact>
+              <DetailUser />
             </Route>
           </Switch>
         </header>
