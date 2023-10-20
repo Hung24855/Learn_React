@@ -15,7 +15,10 @@ import RootReducer from "./store/reducers/rootReducer"; // Trả ra dữ liệu 
 //     <App />
 //   </React.StrictMode>
 // );
-const reduxStore = createStore(RootReducer);
+const reduxStore = createStore(
+  RootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={reduxStore}>
